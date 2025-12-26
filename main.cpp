@@ -1,8 +1,9 @@
 #include <iostream>
 #include <ctime>
 #include <thread>
-using namespace std;
 #include "function.cpp"
+using namespace std;
+
 int main()
 {
 
