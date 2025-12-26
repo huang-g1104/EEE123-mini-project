@@ -7,7 +7,7 @@ int i;
 char borderline[116]="___________________________________________________________________________________________________________________";
 
 void header(){
-cout<<"Shopping List System       by Group 44"<<endl;
+cout<<"\033[1;33mShopping List System\033[0m"<<"\033[33mby Group 44\033[0m"<<endl;
 cout<<borderline<<endl;
 string toolbar[5]{"[1] Add Item", "[2] Delete Item", "[3] Edit Item", "[4] Checklist mode", "[5] Exit"};
 cout<< left << setw(23) << toolbar[0]

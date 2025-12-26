@@ -24,14 +24,14 @@ void printTable() {
 int main()
 {
 welcome();
-this_thread::sleep_for(chrono::milliseconds(3000));
+sleep(5);
 item.push_back({"Apple", "2024-05-15", "5"});
 printTable();
 
 sleep(10);
 item.push_back({"Apple", "2024-05-15", "5"});
 printTable();  
-return 0;
+
 }
 
 
