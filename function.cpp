@@ -1,5 +1,6 @@
-using namespace std;
 #include <iostream>
+using namespace std;
+
 
 void welcome() // Coded by KONG WEI HANG
 {
