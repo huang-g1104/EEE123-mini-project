@@ -5,9 +5,7 @@
 #include "list_interface.cpp"
 #include "ux.cpp"
 using namespace std;
-
 vector<vector<string>>item;
-
 void printTable() {
     sc_refresh();
     header();
