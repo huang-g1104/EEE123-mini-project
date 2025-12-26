@@ -4,13 +4,19 @@
 #include<vector>
 using namespace std;
 int i;
-
-void borderline(){
-    while(i<115){cout<<"_"; i++;}
-    cout<<endl;
-}
+char borderline[116]="___________________________________________________________________________________________________________________";
 
 void header(){
+cout<<"Shopping List System       by Group 44"<<endl;
+cout<<borderline<<endl;
+string toolbar[5]{"[1] Add Item", "[2] Delete Item", "[3] Edit Item", "[4] Checklist mode", "[5] Exit"};
+cout<< left << setw(23) << toolbar[0]
+    << setw(23) << toolbar[1]         
+    << setw(23) << toolbar[2]        
+    << setw(23) << toolbar[3]
+    << setw(23) << toolbar[4]         
+    << endl;
+cout<<borderline<<endl;
 string hder[4]{"No.", "| items", "| Date added", "| Quantity"};
 cout<< left << setw(5) << hder[0]
     << setw(80) << hder[1]         

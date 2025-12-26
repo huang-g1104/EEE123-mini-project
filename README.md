@@ -1,9 +1,8 @@
 # EEE123-mini-project
 Shopping list system
 
-ux.cpp
->>for user experience related coding
-
-function.cpp
->>for functions 
-
+terminal format:
+no=7
+items=80
+date added=20
+quantity=10
