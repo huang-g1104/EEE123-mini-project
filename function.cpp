@@ -22,6 +22,21 @@ void welcome() // Coded by KONG WEI HANG
     cout << "" << endl;
 }
 
+void exitmessage(){
+    cout << " ________________________________________________________________" << endl;
+    cout << "|                                                                |" << endl;
+    cout << "|     Thanks For Using Shopping List ! Goodbye!     |" << endl;
+    cout << "|________________________________________________________________|" << endl;
+    cout << "" << endl;
+    cout << "" << endl;
+}
+
+
+
+
+
+
+
 string jjx(){
     string mtrow[3]={0,0,0};
     string item_name,item_date,item_quantity;
