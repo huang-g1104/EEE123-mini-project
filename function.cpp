@@ -22,7 +22,7 @@ void welcome() // Coded by KONG WEI HANG
     cout << "" << endl;
 }
 
-string add_item(){
+string jjx(){
     string mtrow[3]={0,0,0};
     string item_name,item_date,item_quantity;
     cout<<"\033[2J\033[1;1H";

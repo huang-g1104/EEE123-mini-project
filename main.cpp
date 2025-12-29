@@ -2,15 +2,16 @@
 #include <ctime>
 #include <chrono>
 #include <thread>
+#include <stdlib.h>
 #include "function.cpp"
 #include "list_interface.cpp"
 #include "ux.cpp"
 using namespace std;
 vector<vector<string>>item;
 string row[3]={"","",""};
-
-int a;
-
+int a,b,refnumber;
+string name;
+int quantity;
 void printTable() {
     sc_refresh();
     header();
@@ -23,41 +24,60 @@ void printTable() {
         }
 };
 
+void additem(){
+    vector<string> personData(3);
+    cout << "\nEnter item to be added:\n";
+    cout << "Enter the name and the quantity of item:"<<"\n";
 
-int main(){
-welcome();
-sleep(5);
-printTable();
-cin>>a;
-if(a=1){
-        vector<string> personData(3);
+    cin>>name>>quantity;
+       
+    personData[0]=name;
 
-        cout << "\nEnter item to be added:\n";
-        cout << "Name: ";
-        string name="";
-        int X=sizeof(name);
-        while (X=0){
-        cin>>name; 
-        }
-        personData[0]=name;
+    auto now = chrono::system_clock::now();
+    time_t now_c = chrono::system_clock::to_time_t(now);
+    tm* local_time = localtime(&now_c);
+    char buffer[11];  
+    strftime(buffer, sizeof(buffer), "%Y-%m-%d", local_time);
+    string current_date = buffer;
+    personData[1]=current_date;
+    string quantitystr=to_string(quantity);
+    personData[2]=quantitystr;
 
-        auto now = chrono::system_clock::now();
-        time_t now_c = chrono::system_clock::to_time_t(now);
-        tm* local_time = localtime(&now_c);
-        char buffer[11];  
-        strftime(buffer, sizeof(buffer), "%Y-%m-%d", local_time);
-        string current_date = buffer;
-        personData[1]=current_date;
-        cout << "Quantity: ";
-        getline(cin, personData[2]);
-
-        item.push_back(personData);
+    cout<<name<<quantity;
+    item.push_back(personData);
         printTable();
-    }
 }
 
+int main(){
+item.push_back({"Apple", "2024-05-15", "5"});
+for(;;){
+//welcome();
+//sleep(5);
+printTable();
+cin>>a;
 
+if(a=1 && a<2){
+    additem();
+    a=0;
+    }
+else if(a=2){
+    cout<<"Press 1 to remove entire object"<<"\n";
+    cout<<"Press 2 to remove a certain quantity of the object"<<"\n";
+    b=0;
+    cin>>b;
+    if(b=1){
+        cout<<"Which item to remove?";
+        cin>>refnumber;
+        item.erase(item.begin() + (refnumber)-1);
+        printTable();
+    }
+    else{}
+    }
+else if(a=3){
 
-
-
-//item.push_back({"Apple", "2024-05-15", "5"});
+}
+else{
+    
+}
+}
+}
