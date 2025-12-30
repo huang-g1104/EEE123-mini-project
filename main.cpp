@@ -49,19 +49,8 @@ void printRemoveitem() {
                  << endl;
         }
 };
-void printEditList() {
-    sc_refresh();
-    removeitem_mode();
-    for (size_t i = 0; i < item.size(); i++) {
-            cout << left << setw(7) << (i + 1)   // Row number (1-based index)
-                 << setw(80) << item[i][0]     // Name
-                 << setw(20) << item[i][1]     // Height
-                 << setw(10) << item[i][2]     // Age
-                 << endl;
-        }
-};
 
-void additem(){                //to add item into the list
+void additem(){
     vector<string> personData(3);
     printAdditem();
     cout << "Enter the name and the quantity of item:"<<"\n";
@@ -84,16 +73,16 @@ void additem(){                //to add item into the list
     printTable();
 }
 
-void removeitem(){                 //to remove item from the list
+void removeitem(){
     printRemoveitem();
     cout<<"Press 1 to remove entire object"<<"\n";
-    cout<<"Press 2 to remove a certain quantity of the obje1ct"<<"\n";
-    cout<<"Press 0 to exit" <<"\n"; 
+    cout<<"Press 2 to remove a certain quantity of the object"<<"\n";
+    cout<<"Press 0 to exit";
     b=0;
     cin>>b;
     if(b==1){
         printRemoveitem();
-        cout<<"Which item to remove?" <<"\n"; 
+        cout<<"Which item to remove?";
         cin>>refnumber;
         item.erase(item.begin() + (refnumber)-1);
         printTable();
@@ -118,49 +107,11 @@ void removeitem(){                 //to remove item from the list
         refnumber=0;
         printTable();
     }
-}
-    void edititem(){            //to edit item in the list
-    int b = 3;
-    printTable();
-
-    cout << "Which item do you want to edit? ";
-    cin >> refnumber;
-
-    if(refnumber < 1 || refnumber > item.size()){   // Validate index
-        cout << "Invalid item number!";
-        sleep(2);
-        return;
-    }
-
-    cout << "[1] Edit name\n";
-    cout << "[2] Edit quantity\n";
-    cout << "[0] Cancel\n";
-    cout << "Choose: ";
-    cin >> b;
-
-    cin.ignore(); // important for getline
-
-    if(b == 1){
-        string newName;
-        cout << "Enter new name: ";
-        getline(cin, newName);
-        item[refnumber - 1][0] = newName;
-    }
-    else if(b == 2){
-        int newQuantity;
-        cout << "Enter new quantity: ";
-        cin >> newQuantity;
-        item[refnumber - 1][2] = to_string(newQuantity);
-    }
-
-    
     else {
         cout<<"Enter a valid input";
         printTable;
     }
-    }
-    
-;
+};
 
                                                  //main()
 int main(){
@@ -174,8 +125,6 @@ for(;;){                                          //the loop starts here
 a=b=0;
 printTable();
 cin>>a;                                           //cue for functions
-cin.clear();
-cin.ignore(1000, '\n');
 
 if(a==1){
     additem();
@@ -186,22 +135,13 @@ else if(a==2){
     a=0;
     b=0;
     }
-else if(a==3){
-    edititem();
-    a=0;
-}
-
-else if(a==4){
-    //checklist mode
-}
-else if(a==5){
-     exitmessage();
-    sleep(4);
-    break;
+else if(a=3){
+//checklist mode
 }
 else{
-    cout<<"Invalid Input, Please Try Again"<<endl;
-    sleep(2);
+    exitmessage();
+    sleep(4);
+    break;
 }
 }
 }

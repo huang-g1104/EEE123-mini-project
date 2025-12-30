@@ -9,6 +9,4 @@ quantity=10
 
 current code unable to wait for user input(fixed)
 
-current code unable to edit list(done)
-
 checklist mode yet to be done
