@@ -9,4 +9,6 @@ quantity=10
 
 current code unable to wait for user input(fixed)
 
-checklist mode yet to be done
+checklist mode yet to be done(done)
+
+foolproof

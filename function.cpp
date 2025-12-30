@@ -18,14 +18,15 @@ void welcome() // Coded by KONG WEI HANG
     cout << "\t\t\t     THE BEST!!!"                                                                                  << endl;
     cout << "\t\t\t     THE SAFEST!!!"                                                                                 << endl;
     cout << "\t\t\t     THE SMOOTHEST!!!"                                                                               << endl;
-    cout << "_______________________GROUP 44 WELCOME U_______________________" << endl;
+    cout << "____________________________GROUP 44____________________________" << endl;
     cout << "" << endl;
 }
 
-void exitmessage(){
+void exitmessage()// Coded by KONG WEI HANG
+{
     cout << " ________________________________________________________________" << endl;
     cout << "|                                                                |" << endl;
-    cout << "|     Thanks For Using Shopping List ! Goodbye!     |" << endl;
+    cout << "|     Thanks For Using Shopping List ! Goodbye!                  |" << endl;
     cout << "|________________________________________________________________|" << endl;
     cout << "" << endl;
     cout << "" << endl;
