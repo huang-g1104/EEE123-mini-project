@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <ctime>
 #include <chrono>
 #include <thread>
@@ -10,8 +11,9 @@ using namespace std;
                                                  //variable declarations
 vector<vector<string>>item;
 int a,b,c,refnumber;
-string name, tempquan;
+string tempquan;
 int quantity;
+double price;
                                                  //function declarations
 void printTable() {
     sc_refresh();
@@ -20,9 +22,10 @@ void printTable() {
             cout << left << setw(7) << (i + 1)   // Row number (1-based index)
                  << setw(80) << item[i][0]     // Name
                  << setw(20) << item[i][1]     // Height
-                 << setw(10) << item[i][2]     // Age
+                 << setw(10) << item[i][2]
+                 << setw(10) << item[i][3]     // Age
                  << endl;
-        }
+    }
 };
 
 void printAdditem() {
@@ -32,9 +35,10 @@ void printAdditem() {
             cout << left << setw(7) << (i + 1)   // Row number (1-based index)
                  << setw(80) << item[i][0]     // Name
                  << setw(20) << item[i][1]     // Height
-                 << setw(10) << item[i][2]     // Age
+                 << setw(10) << item[i][2]
+                 << setw(10) << item[i][3]     // Age
                  << endl;
-        }
+    }
 };
 
 void printRemoveitem() {
@@ -44,9 +48,10 @@ void printRemoveitem() {
             cout << left << setw(7) << (i + 1)   // Row number (1-based index)
                  << setw(80) << item[i][0]     // Name
                  << setw(20) << item[i][1]     // Height
-                 << setw(10) << item[i][2]     // Age
+                 << setw(10) << item[i][2]
+                 << setw(10) << item[i][3]     // Age
                  << endl;
-        }
+    }
 };
 
 void printChecklist(){
@@ -56,31 +61,41 @@ void printChecklist(){
             cout << left << setw(7) << (i + 1)   // Row number (1-based index)
                  << setw(80) << item[i][0]     // Name
                  << setw(20) << item[i][1]     // Height
-                 << setw(10) << item[i][2]     // Age
+                 << setw(10) << item[i][2]
+                 << setw(10) << item[i][3]     // Age
                  << endl;
-        }
+    }
 };
 
 void additem(){
-    vector<string> personData(3);
+    vector<string> waiter(3);
+    string name;
+
     printAdditem();
-    cout << "Enter the name and the quantity of item:"<<"\n";
-
-    cin>>name>>quantity;
-       
-    personData[0]=name;
-
+    cout << "Enter the name of the item:"<<"\n";
+    getline(cin,name);
+    printAdditem();
+    cout<<"Enter the price and quantity of the item";
+    cin>>price>>quantity;
+    waiter[0]=name;
+    
     auto now = chrono::system_clock::now();
     time_t now_c = chrono::system_clock::to_time_t(now);
     tm* local_time = localtime(&now_c);
     char buffer[11];  
     strftime(buffer, sizeof(buffer), "%Y-%m-%d", local_time);
     string current_date = buffer;
-    personData[1]=current_date;
+    waiter[1]=current_date;
+    
     string quantitystr=to_string(quantity);
-    personData[2]=quantitystr;
+    waiter[2]=quantitystr;
+
+    price=price*quantity;
+    string total_price=to_string(price);
+    waiter[3]=total_price;
     quantity=0;
-    item.push_back(personData);
+    item.push_back(waiter);
+    
     printTable();
 }
 
@@ -138,9 +153,31 @@ void checklist(){
 
                                                  //main()
 int main(){
-item.push_back({"Apple", "2024-05-15", "5"});
-item.push_back({"Orange", "2024-06-09", "20"});
-item.push_back({"Pear", "2025-09-10", "4"});
+
+ifstream input("shoppinglist.txt");
+string line;
+
+while (getline(input, line)) {
+    stringstream ss(line);
+    vector<string> row;
+    string field;
+
+        // Extract exactly 4 fields
+    for (int i = 0; i < 4; i++) {
+        if (getline(ss, field, '|')) {
+                row.push_back(field);
+        }
+    }
+        // Safety check: only push valid rows
+    if (row.size() == 4) {
+        item.push_back(row);
+    }
+}
+
+    input.close();
+
+
+
 
 welcome();
 sleep(2);
