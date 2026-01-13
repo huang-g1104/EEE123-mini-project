@@ -68,15 +68,12 @@ void printChecklist(){
 };
 
 void additem(){
-    vector<string> waiter(3);
-    string name;
+    vector<string> waiter(4);
+    string name="";
 
     printAdditem();
     cout << "Enter the name of the item:"<<"\n";
-    getline(cin,name);
-    printAdditem();
-    cout<<"Enter the price and quantity of the item";
-    cin>>price>>quantity;
+    cin>>name>>price>>quantity;
     waiter[0]=name;
     
     auto now = chrono::system_clock::now();
@@ -91,7 +88,9 @@ void additem(){
     waiter[2]=quantitystr;
 
     price=price*quantity;
-    string total_price=to_string(price);
+    ostringstream out;
+    out<<fixed<<setprecision(2)<<price;
+    string total_price=out.str();
     waiter[3]=total_price;
     quantity=0;
     item.push_back(waiter);
@@ -206,6 +205,12 @@ for(;;){
         }
     }
     else{
+    ofstream output;
+    output.open("shoppinglist.txt");
+    for (size_t i = 0; i < item.size(); i++){
+        output<<item[i][0]<<"|"<<item[i][1]<<"|"<<item[i][2]<<"|"<<item[i][3]<<endl;
+    }
+    output.close();
         sleep(1);
         exitmessage();
         sleep(3);

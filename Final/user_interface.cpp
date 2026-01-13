@@ -81,3 +81,55 @@ cout<< left << setw(5) << hder[0]
     << setw(10) << hder[3]
     << endl; 
 }
+
+void printTable() {
+    sc_refresh();
+    toolbar();
+    for (size_t i = 0; i < item.size(); i++) {
+            cout << left << setw(7) << (i + 1)   // Row number (1-based index)
+                 << setw(80) << item[i][0]     // Name
+                 << setw(20) << item[i][1]     // Height
+                 << setw(10) << item[i][2]
+                 << setw(10) << item[i][3]     // Age
+                 << endl;
+    }
+};
+
+void printAdditem() {
+    sc_refresh();
+    additem_mode();
+    for (size_t i = 0; i < item.size(); i++) {
+            cout << left << setw(7) << (i + 1)   // Row number (1-based index)
+                 << setw(80) << item[i][0]     // Name
+                 << setw(20) << item[i][1]     // Height
+                 << setw(10) << item[i][2]
+                 << setw(10) << item[i][3]     // Age
+                 << endl;
+    }
+};
+
+void printRemoveitem() {
+    sc_refresh();
+    removeitem_mode();
+    for (size_t i = 0; i < item.size(); i++) {
+            cout << left << setw(7) << (i + 1)   // Row number (1-based index)
+                 << setw(80) << item[i][0]     // Name
+                 << setw(20) << item[i][1]     // Height
+                 << setw(10) << item[i][2]
+                 << setw(10) << item[i][3]     // Age
+                 << endl;
+    }
+};
+
+void printChecklist(){
+    sc_refresh();
+    checklist_mode();
+    for (size_t i = 0; i < item.size(); i++) {
+            cout << left << setw(7) << (i + 1)   // Row number (1-based index)
+                 << setw(80) << item[i][0]     // Name
+                 << setw(20) << item[i][1]     // Height
+                 << setw(10) << item[i][2]
+                 << setw(10) << item[i][3]     // Age
+                 << endl;
+    }
+};
