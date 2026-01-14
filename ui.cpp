@@ -90,6 +90,26 @@ cout<< left << setw(5) << hder[0]
     << endl; 
 }
 
+void clearlist_mode(){
+cout<<"\033[1;33mShopping List System\033[0m"<<"      "<<"\033[33mby Group 44\033[0m"<<endl;
+cout<<borderline<<endl;
+string toolbar[5]{"\033[1;34mCLEAR SHOPPING LIST\033[0m", "", "", "", "[0] Exit"};
+cout<< left << setw(23) << toolbar[0]
+    << setw(23) << toolbar[1]         
+    << setw(23) << toolbar[2]        
+    << setw(23) << toolbar[3]
+    << setw(23) << toolbar[4]         
+    << endl;
+cout<<borderline<<endl;
+string hder[5]{"No.", "| items", "| Date added", "| Quantity","| Price"};
+cout<< left << setw(5) << hder[0]
+    << setw(80) << hder[1]
+    << setw(20) << hder[2]
+    << setw(10) << hder[3]
+    << setw(10) << hder[4]
+    << endl; 
+}
+
 void printTable() {
     sc_refresh();
     toolbar();

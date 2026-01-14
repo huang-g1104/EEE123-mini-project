@@ -34,7 +34,7 @@ for(;;){
             b=0;
             }
         else if(a==3){
-            cout<<"har";
+            cout<<" ";
         }
         else if(a==4){
             checklist();
