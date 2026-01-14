@@ -7,8 +7,8 @@
 using namespace std;    
 
 
-void loadfromfile(){
-    ifstream input("shoppinglist.txt");
+void loadfromfile( string filename){
+    ifstream input(filename);
     string line;
 
     while (getline(input, line)) {
@@ -30,9 +30,9 @@ void loadfromfile(){
     input.close();
 }
 
-void savetofile(){
+void savetofile(string filename){
     ofstream output;
-    output.open("shoppinglist.txt");
+    output.open(filename);
     for (size_t i = 0; i < item.size(); i++){
         output<<item[i][0]<<"|"<<item[i][1]<<"|"<<item[i][2]<<"|"<<item[i][3]<<endl;
     }

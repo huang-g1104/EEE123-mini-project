@@ -9,4 +9,8 @@ extern int refnumber, b, quantity;
 extern string tempquan;
 extern double price;
 
+void additem();
+void removeitem();
+void checklist();
+
 #endif 
