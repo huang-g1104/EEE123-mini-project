@@ -1,9 +1,12 @@
 #include <iostream>
 #include <iomanip>
+#include <string>
+#include <sstream>
 #include <chrono>
 #include <vector>
+#include "functions.hpp"
 #include "list_array.hpp"
-#include "ui.cpp"
+#include "ui.hpp"
 using namespace std;
 
 int refnumber, b, quantity; 
@@ -75,12 +78,12 @@ void removeitem(){
     }
     else {
         cout<<"Enter a valid input";
-        printTable;
+        printTable();
     }
 };
 
 void checklist(){
-    int c=sizeof(item);
+    int c=item.size();
     b=3;
     while(c!=0 && b!=0){
         printChecklist();

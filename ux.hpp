@@ -3,7 +3,7 @@
 
 void welcome();
 void exitmessage();
-void sleep(int time);
+void sleep(int);
 void sc_refresh();
 
 #endif

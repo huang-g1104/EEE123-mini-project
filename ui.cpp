@@ -3,7 +3,8 @@
 #include<iomanip>
 #include<vector>
 #include "list_array.hpp"
-#include "ux.cpp"
+#include "ui.hpp"
+#include "ux.hpp"
 using namespace std;
 int i;
 char borderline[125]="____________________________________________________________________________________________________________________________";
