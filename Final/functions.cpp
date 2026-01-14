@@ -1,7 +1,14 @@
 #include <iostream>
 #include <iomanip>
+#include <chrono>
 #include <vector>
+#include "list_array.hpp"
+#include "ui.cpp"
 using namespace std;
+
+int refnumber, b, quantity; 
+string tempquan;
+double price;
 
 void additem(){
 
@@ -73,7 +80,7 @@ void removeitem(){
 };
 
 void checklist(){
-    c=sizeof(item);
+    int c=sizeof(item);
     b=3;
     while(c!=0 && b!=0){
         printChecklist();

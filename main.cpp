@@ -205,12 +205,7 @@ for(;;){
         }
     }
     else{
-    ofstream output;
-    output.open("shoppinglist.txt");
-    for (size_t i = 0; i < item.size(); i++){
-        output<<item[i][0]<<"|"<<item[i][1]<<"|"<<item[i][2]<<"|"<<item[i][3]<<endl;
-    }
-    output.close();
+
         sleep(1);
         exitmessage();
         sleep(3);

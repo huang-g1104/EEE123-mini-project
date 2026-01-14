@@ -1,4 +1,6 @@
 #include <iostream>
+#include <thread>
+#include <chrono>
 using namespace std;
 
 void welcome() // Coded by KONG WEI HANG
@@ -31,3 +33,10 @@ void exitmessage()// Coded by KONG WEI HANG
     cout << "" << endl;
 }
 
+void sleep(int time){
+    this_thread::sleep_for(chrono::milliseconds(time*1000));
+}
+
+void sc_refresh(){
+    cout << "\033[2J\033[1;1H";
+}
