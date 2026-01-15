@@ -194,9 +194,9 @@ void scheduleitem(){                                    //similar to additem fun
     }
     else if(name.length()>1 && name.length()<30 ){
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        cout << "Enter the quantity of the item to be removed: ";
+        cout << "Enter the quantity of the item to be scheduled: ";
         cin >> quantity;
-        cout << "Enter the index number of the item to be removed: ";
+        cout << "Enter the index number of the item to be scheduled: ";
         cin >> price;
         if (cin.fail()&& price<0&& quantity<0) {
             cin.clear(); 
