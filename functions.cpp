@@ -35,7 +35,7 @@ void additem(){
         cin >> quantity;
         cout << "Enter the price of the item to be added: ";
         cin >> price;
-        if (cin.fail()&& price<0&& quantity<0) {
+        if (cin.fail()|| price<0||quantity<0) {
             cin.clear(); 
             cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
             cout<<"Invalid price input. Please enter a valid number for the price and quantity"<<"\n";
