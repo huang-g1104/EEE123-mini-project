@@ -11,15 +11,25 @@ int a;
                                                  //variable declaration
 int main(){
 
-loadfromfile("shoppinglist.txt");
+loadfromfile("shoppinglist.txt",item);
+loadfromfile("schedule.txt",schedule);
 sc_refresh();
 welcome();
 sleep(2);
+checkforschedule();
 
 a=10;
 for(;;){
     b=0;
-    printTable();                                     //the loop starts here
+    printTable();
+    for (size_t i = 0; i < schedule.size(); i++) {
+        cout << left << setw(7) << (i + 1)   //Row number (1-based index)
+        << setw(80) << schedule[i][0]       //schedule name
+        << setw(20) << schedule[i][1]       //time added
+        << setw(10) << schedule[i][2]       //quantity
+        << setw(10) << schedule[i][3]       //price
+        << endl;  
+    }                                  //the loop starts here
     cin>>a;                                           //cue for functions
     if(a==1){
         additem();
@@ -31,6 +41,7 @@ for(;;){
         a=10;
     }
     else if(a==3){
+        scheduleitem();
         a=10;    
     }
     else if(a==4){
@@ -42,9 +53,8 @@ for(;;){
         a=10;
     }
     else if(a==0){
-        cout<<a;
         savetofile("shoppinglist.txt");
-        sleep(1);
+        savetoschedule("schedule.txt");
         exitmessage();
         sleep(3);
         return 0;

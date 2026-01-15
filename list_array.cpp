@@ -1,9 +1,10 @@
 #include <vector>
 #include <string>
-#include "list_array.hpp"
+#include "main.hpp"
 using namespace std;    
 
 vector<vector<string>>item;
+vector<vector<string>>schedule;
 
 long double totalprice(){
     long double sum=0;

@@ -32,7 +32,7 @@ void printlist(){
         cout<<endl;
     }
     cout<<borderline<<endl;
-    //cout<<"Total: "<<right<<fixed<<setprecision(2)<<setw(112)<<"RM "<<totalprice()<<endl;
+    cout<<"Total: "<<right<<fixed<<setprecision(2)<<setw(112)<<"RM "<<totalprice()<<endl;
     cout<<borderline<<endl;
 
 }
@@ -106,7 +106,20 @@ cout<< left << setw(23) << toolbar[0]
     << endl;
 cout<<borderline<<endl;
 header();
+}
 
+void scheduleitem_mode(){
+cout<<"\033[1;33mShopping List System\033[0m"<<"      "<<"\033[33mby Group 44\033[0m"<<endl;
+cout<<borderline<<endl;
+string toolbar[5]{"\033[1;34mSCHEDULE AN ITEM\033[0m", "", "", "", "[0] Exit"};
+cout<< left << setw(23) << toolbar[0]
+    << setw(23) << toolbar[1]         
+    << setw(23) << toolbar[2]        
+    << setw(23) << toolbar[3]
+    << setw(23) << toolbar[4]         
+    << endl;
+cout<<borderline<<endl;
+header();
 }
 
 void printTable() {
@@ -137,5 +150,11 @@ void printChecklist(){
 void printClearlist(){
     sc_refresh();
     clearlist_mode();
+    printlist();
+};
+
+void printScheduleitem(){
+    sc_refresh();
+    scheduleitem_mode();
     printlist();
 };
