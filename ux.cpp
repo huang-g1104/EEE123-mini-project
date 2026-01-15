@@ -4,34 +4,59 @@
 #include "main.hpp"
 using namespace std;
 
-void welcome() // Coded by KONG WEI HANG
+void welcome() 
 {
-    cout << "______________________________________________________" << endl;
-    cout << " __    __    ___  _        __   ___   ___ ___    ___  " << endl;
-    cout << "|  |__|  |  /  _]| |      /  ] /   \\ |   |   |  /  _] " << endl;
-    cout << "|  |  |  | /  [_ | |     /  / |     || _   _ | /  [_  " << endl;
-    cout << "|  |  |  ||    _]| |___ /  /  |  O  ||  \\_/  ||    _] " << endl;
-    cout << "|  `  '  ||   [_ |     /   \\_ |     ||   |   ||   [_  " << endl;
-    cout << " \\      / |     ||     \\     ||     ||   |   ||     | " << endl;
-    cout << "  \\_/\\_/  |_____||_____|\\____| \\___/ |___|___||_____| " << endl;
-    cout << "______________________________________________________" << endl;     
-    cout << "Welcome dear valued customers to our shopping list system site!"         << endl;
-    cout << "We highly value the performance of our system in bringing our users: "                << endl;
-    cout << "\t\t\t     THE BEST!!!"                                                                                  << endl;
-    cout << "\t\t\t     THE SAFEST!!!"                                                                                 << endl;
-    cout << "\t\t\t     THE SMOOTHEST!!!"                                                                               << endl;
-    cout << "____________________________GROUP 44____________________________" << endl;
-    cout << "" << endl;
-};
+    int totalWidth = 124;
 
-void exitmessage()// Coded by KONG WEI HANG
+    string yellow = "\033[1;33m";
+    string reset = "\033[0m";
+
+    cout << "____________________________________________________________________________________________________________________________" << endl << endl;
+
+
+    string paddingArt = string(30, ' ');
+    
+    cout << yellow; 
+    cout << paddingArt << " __    __    _____  ___        ___    ____   _________  _____  " << endl;
+    cout << paddingArt << "|  |__|  |  /  _ _] | |       /   ]  /     \\ |   |   | /  _ _] " << endl;
+    cout << paddingArt << "|  |  |  |  |  [_ | |        /  /    |     | | _   _ | |  [_  " << endl;
+    cout << paddingArt << "|  |  |  |  |    _] | |___  /  /     |  O  | |  \\_/  | |    _] " << endl;
+    cout << paddingArt << "|  `  '  |  |   [_  |     | |   \\_   |     | |   |   | |   [_  " << endl;
+    cout << paddingArt << "\\        /  |     | |     |  \\     | |     | |   |   | |     | " << endl;
+    cout << paddingArt << " \\_/  \\_/   |_____| |_____|   \\____|  \\___/  |___|___| |_____| " << endl;
+    cout << reset;
+    cout << "____________________________________________________________________________________________________________________________" << endl << endl;
+
+
+    cout << string(52, ' ') << yellow << "Shopping List System" << reset << endl;
+    cout << string(45, ' ') << "A EEE123 mini project by Group 44" << endl << endl;
+
+
+    cout << string(35, ' ') << "Group Leader : Kenny anak Sirai" << endl;
+    cout << string(35, ' ') << "Group members: Raveen A/L Anbunathan" << endl;
+    cout << string(35, ' ') << "               Huang Qi He" << endl;
+    cout << string(35, ' ') << "               Kong Wei Hang" << endl;
+    cout << string(35, ' ') << "               Muhammad Azrol Adli Bin Mohd Azerilakmar" << endl << endl;
+
+    cout << "____________________________________________________________GROUP 44________________________________________________________" << endl;
+    cout << endl;
+}
+
+void exitmessage() // Coded by KONG WEI HANG
 {
-    cout << " ________________________________________________________________" << endl;
-    cout << "|                                                                |" << endl;
-    cout << "|     Thanks For Using Shopping List ! Goodbye!                  |" << endl;
-    cout << "|________________________________________________________________|" << endl;
-    cout << "" << endl;
-    cout << "" << endl;
+    int totalWidth = 124;
+    string red = "\033[1;31m";
+    string reset = "\033[0m";
+    
+    string padding = string(29, ' ');
+
+    cout << endl << endl;
+    cout << padding << " ________________________________________________________________ " << endl;
+    cout << padding << "|                                                                |" << endl;
+    cout << padding << "|         " << "From Group 44:" << reset << "                                         |" << endl;
+    cout << padding << "|         " << red << "Thanks for using our Shopping List! Goodbye!" << reset << "           |" << endl;
+    cout << padding << "|________________________________________________________________|" << endl;
+    cout << endl << endl;
 }
 
 void sleep(int time){
@@ -41,3 +66,4 @@ void sleep(int time){
 void sc_refresh(){
     cout << "\033[2J\033[1;1H";
 };
+

@@ -6,7 +6,7 @@
 
 using namespace std;
 int i;
-char borderline[125]="____________________________________________________________________________________________________________________________";
+char borderline[127]="______________________________________________________________________________________________________________________________";
 
 
 void header(){
@@ -40,7 +40,7 @@ void printlist(){
 void toolbar(){
 cout<<"\033[1;33mShopping List System\033[0m"<<"      "<<"\033[33mby Group 44\033[0m"<<endl;
 cout<<borderline<<endl;
-string toolbar[6]{"[1] Add Item", "[2] Remove Item", "[3]", "[4] Checklist Mode","[5] Clear list","[0] Exit"};
+string toolbar[6]{"[1] Add Item", "[2] Remove Item", "[3] Schedule", "[4] Checklist Mode","[5] Clear list","[0] Exit"};
 cout<< left << setw(23) << toolbar[0]
     << setw(23) << toolbar[1]         
     << setw(23) << toolbar[2]        
@@ -69,7 +69,7 @@ header();
 void removeitem_mode(){
 cout<<"\033[1;33mShopping List System\033[0m"<<"      "<<"\033[33mby Group 44\033[0m"<<endl;
 cout<<borderline<<endl;
-string toolbar[5]{"\033[1;31mREMOVE ITEM\033[0m","[1] Remove by item", "[2] Remove item by quantity","", "[0] Exit"};
+string toolbar[5]{"\033[1;35mREMOVE ITEM\033[0m","[1] Remove by item", "[2] Remove item by quantity","", "[0] Exit"};
 cout<< left << setw(23) << toolbar[0]
     << setw(23) << toolbar[1]         
     << setw(23) << toolbar[2]        
@@ -97,7 +97,7 @@ header();
 void clearlist_mode(){
 cout<<"\033[1;33mShopping List System\033[0m"<<"      "<<"\033[33mby Group 44\033[0m"<<endl;
 cout<<borderline<<endl;
-string toolbar[5]{"\033[1;34mCLEAR SHOPPING LIST\033[0m", "", "", "", "[0] Exit"};
+string toolbar[5]{"\033[1;31mCLEAR SHOPPING LIST\033[0m", "", "", "", "[0] Exit"};
 cout<< left << setw(23) << toolbar[0]
     << setw(23) << toolbar[1]         
     << setw(23) << toolbar[2]        
@@ -111,7 +111,7 @@ header();
 void scheduleitem_mode(){
 cout<<"\033[1;33mShopping List System\033[0m"<<"      "<<"\033[33mby Group 44\033[0m"<<endl;
 cout<<borderline<<endl;
-string toolbar[5]{"\033[1;34mSCHEDULE AN ITEM\033[0m", "", "", "", "[0] Exit"};
+string toolbar[5]{"\033[1;38mSCHEDULE AN ITEM\033[0m", "", "", "", "[0] Exit"};
 cout<< left << setw(23) << toolbar[0]
     << setw(23) << toolbar[1]         
     << setw(23) << toolbar[2]        

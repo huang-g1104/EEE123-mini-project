@@ -19,8 +19,8 @@ void additem(){
     string name;
     printAdditem();
         cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
-        cout << "the name of the item: ";
-        cin >> name;
+        cout << "Enter the name of the item to be added: ";
+        getline(cin, name,'\n');
     if(name=="0"){
         printTable();
         return;
@@ -31,9 +31,9 @@ void additem(){
     }
     else if(name.length()>1 && name.length()<30 ){
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        cout << "the quantity of the item: ";
+        cout << "Enter the quantity of the item to be added: ";
         cin >> quantity;
-        cout << "the price of the item ";
+        cout << "Enter the price of the item to be added: ";
         cin >> price;
         if (cin.fail()&& price<0&& quantity<0) {
             cin.clear(); 
@@ -76,7 +76,8 @@ void removeitem(){
     cin>>b;
     if(b==1){
         printRemoveitem();
-        cout<<"Which item to remove?";
+        cout<<"--Remove entire item--"<<"\n";
+        cout<<"Enter the index number of the item to be removed: ";
         cin>>refnumber;
         item.erase(item.begin() + (refnumber)-1);
         printTable();
@@ -84,10 +85,12 @@ void removeitem(){
     }
     else if(b==2) {
         printRemoveitem();
-        cout<<"Which item to remove?"<<"\n";
+        cout<<"--Remove by quantity--"<<"\n";
+        cout<<"Enter the index number of the item to be removed: "<<"\n";
         cin>>refnumber;
         printRemoveitem();
-        cout<<"Enter the quantity of the item to remove"; 
+        cout<<"--Remove by quantity--"<<"\n";
+        cout<<"Enter the quantity of the item to be removed: "; 
         cin>>quantity;
         tempquan=item[refnumber-1][2];
         quantity=atoi(tempquan.c_str())-quantity;
@@ -124,7 +127,7 @@ void checklist(){
 
 void clearlist(){
     printClearlist();
-    cout<< "Are you sure you want to CLEAR the shopping list?"<<"\n";
+    cout<< "\033[31mAre you sure you want to CLEAR the entire shopping list?\033[0m"<<"\n";
     cout<< "Enter 5 to proceed"<<"\n";
     b=4;
     while(b!=0){
@@ -175,8 +178,8 @@ void scheduleitem(){
     char schedule_date[11];
     printScheduleitem();
         cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
-        cout << "the name of the item: ";
-        cin >> name;
+        cout << "Enter the name of the item to be scheduled: ";
+        getline(cin, name,'\n');
     if(name=="0"){
         printTable();
         return;
@@ -187,9 +190,9 @@ void scheduleitem(){
     }
     else if(name.length()>1 && name.length()<30 ){
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        cout << "the quantity of the item: ";
+        cout << "Enter the quantity of the item to be removed: ";
         cin >> quantity;
-        cout << "the price of the item ";
+        cout << "Enter the index number of the item to be removed: ";
         cin >> price;
         if (cin.fail()&& price<0&& quantity<0) {
             cin.clear(); 
@@ -214,8 +217,16 @@ void scheduleitem(){
         quantity=0;
         price=0;
         schedule.push_back(waiter);
+        cout<<"Adding the item to schedule."<<"\n";
+        sleep(1.5);
+        printScheduleitem();
+        cout<<"Adding the item to schedule.."<<"\n";
+        sleep(1.5);
+        printScheduleitem();
+        cout<<"Adding the item to schedule..."<<"\n";
+        sleep(1.5);
         cout<<"Item scheduled successfully!"<<"\n";
-        sleep(2);
+        sleep(1);
         printTable();
         }
     }
