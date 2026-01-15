@@ -45,14 +45,14 @@ for(;;){
         a=10;
     }
     else if(a==0){
-        savetofile("shoppinglist.txt");
-        savetoschedule("schedule.txt");
+        savetofile("shoppinglist.txt");                   //save shopping list to file upon exit
+        savetoschedule("schedule.txt");                   //save schedule list to file upon exit 
         exitmessage();
         sleep(3);
         return 0;
     }
     else{
-        cout<<"Please enter a valid input"<<"\n";
+        cout<<"Please enter a valid input"<<"\n";           //invalid input handling
         a=10;
     }   
 

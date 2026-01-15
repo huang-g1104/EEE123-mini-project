@@ -9,7 +9,7 @@ int i;
 char borderline[127]="______________________________________________________________________________________________________________________________";
 
 
-void header(){
+void header(){                                                                      //table header
     string hder[5]{"No.", "| items", "| Date added", "| Quantity","| Price"};
     cout<< left << setw(5) << hder[0]
     << setw(80) << hder[1]
@@ -19,7 +19,7 @@ void header(){
     << endl;
 }
 
-void printlist(){
+void printlist(){                                                                   //print shopping list table 
     for (size_t i = 0; i < item.size(); i++) {
             cout << left << setw(7) << (i + 1)   //Row number (1-based index)
                  << setw(80) << item[i][0]       //item name
@@ -37,7 +37,7 @@ void printlist(){
 
 }
 
-void toolbar(){
+void toolbar(){                                                                     //main toolbar display                                           
 cout<<"\033[1;33mShopping List System\033[0m"<<"      "<<"\033[33mby Group 44\033[0m"<<endl;
 cout<<borderline<<endl;
 string toolbar[6]{"[1] Add Item", "[2] Remove Item", "[3] Schedule", "[4] Checklist Mode","[5] Clear list","[0] Exit"};
@@ -52,7 +52,7 @@ cout<<borderline<<endl;
 header();
 };
 
-void additem_mode(){
+void additem_mode(){                                                                //additem toolbar display
 cout<<"\033[1;33mShopping List System\033[0m"<<"      "<<"\033[33mby Group 44\033[0m"<<endl;
 cout<<borderline<<endl;
 string toolbar[5]{"\033[1;32mADD ITEM\033[0m","", "", "", "[0] Exit"};
@@ -122,7 +122,7 @@ cout<<borderline<<endl;
 header();
 }
 
-void printTable() {
+void printTable() {                                                                  //print main toolbar with shopping list
     sc_refresh();
     toolbar();
     printlist();
