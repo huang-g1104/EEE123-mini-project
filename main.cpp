@@ -21,8 +21,7 @@ checkforschedule();
 a=10;
 for(;;){
     b=0;
-    printTable();
-    for (size_t i = 0; i < schedule.size(); i++) {                       //the loop starts here
+    printTable();                                                       //the loop starts here
     cin>>a;                                                              //cue for functions
     if(a==1){
         additem();
