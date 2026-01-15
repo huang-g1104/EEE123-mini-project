@@ -160,20 +160,23 @@ void clearlist(){
     }
 }
 
-void checkforschedule() {                     //check for scheduled items whose date is today or earlier
+void checkforschedule() {
+    if (schedule.empty()) return;
+    vector<string> waiter(4);
     auto now = chrono::system_clock::now();
     time_t now_c = chrono::system_clock::to_time_t(now);
     tm* local_time = localtime(&now_c);
     char buffer[11];    
     strftime(buffer, sizeof(buffer), "%Y-%m-%d", local_time);    
     string current_date = buffer;
-    for (int i = schedule.size() - 1; i >= 0; i--) {                //iterate backwards to safely remove items
-        if (schedule[i][1] > current_date) { 
-            item.push_back(schedule[i]);                //add scheduled item to shopping list
-            schedule.erase(schedule.begin() + i);       //remove item from schedule list
-        }
-        else {
-            continue;
+    for (int i = (int)schedule.size() - 1; i >= 0; i--) {
+        if (schedule[i][1] == current_date) { 
+            waiter[0] = schedule[i][0];
+            waiter[1] = schedule[i][1];
+            waiter[2] = schedule[i][2];
+            waiter[3] = schedule[i][3];
+            item.push_back(waiter);                
+            schedule.erase(schedule.begin() + i); 
         }
     }
 }

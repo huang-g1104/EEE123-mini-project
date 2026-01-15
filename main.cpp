@@ -20,6 +20,7 @@ checkforschedule();
 
 a=10;
 for(;;){
+
     b=0;
     printTable();                                                       //the loop starts here
     cin>>a;                                                              //cue for functions
