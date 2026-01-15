@@ -4,51 +4,55 @@
 #include <chrono>
 #include <thread>
 #include <stdlib.h>
-#include "functions.hpp"
-#include "list_array.hpp"
-#include "io_functions.hpp"
-#include "ux.hpp"
-#include "ui.hpp"
+#include "main.hpp"
 
-int a;
 using namespace std;
+int a;
                                                  //variable declaration
 int main(){
 
 loadfromfile("shoppinglist.txt");
-
+sc_refresh();
 welcome();
 sleep(2);
 
 a=10;
 for(;;){
     b=0;
-    if(a!=0){                                          //the loop starts here
-        printTable();
-        cin>>a;                                           //cue for functions
-        if(a==1){
-            additem();
-            }
-        else if(a==2){
-            removeitem();
-            b=0;
-            }
-        else if(a==3){
-            cout<<" ";
-        }
-        else if(a==4){
-            checklist();
-        }
-        else{
-
-        }
+    printTable();                                     //the loop starts here
+    cin>>a;                                           //cue for functions
+    if(a==1){
+        additem();
+        a=10;
     }
-    else{
+    else if(a==2){
+        removeitem();
+        b=0;
+        a=10;
+    }
+    else if(a==3){
+        a=10;    
+    }
+    else if(a==4){
+        checklist();
+        a=10;
+    }
+    else if (a==5){
+        clearlist();
+        a=10;
+    }
+    else if(a==0){
+        cout<<a;
         savetofile("shoppinglist.txt");
         sleep(1);
         exitmessage();
         sleep(3);
         return 0;
     }
+    else{
+        cout<<"Please enter a valid input"<<"\n";
+        a=10;
+    }   
+
 }
 }
