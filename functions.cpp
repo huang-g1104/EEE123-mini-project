@@ -126,7 +126,6 @@ void checklist(){
             sleep(1);
         }
     }
-
     printTable();
 }
 
@@ -199,12 +198,12 @@ void scheduleitem(){                                    //similar to additem fun
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "Enter the quantity of the item to be scheduled: ";
         cin >> quantity;
-        cout << "Enter the index number of the item to be scheduled: ";
+        cout << "Enter the price of the item to be scheduled: ";
         cin >> price;
         if (cin.fail()&& price<0&& quantity<0) {
             cin.clear(); 
             cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
-            cout<<"Invalid price input. Please enter a valid number for the price and quantity"<<"\n";
+            cout<<"Invalid quantity or price input. Please enter a valid number for the price and quantity"<<"\n";
             return;
         }
         else{
