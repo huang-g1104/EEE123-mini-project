@@ -112,19 +112,22 @@ void removeitem(){
     }
 };
 
-void checklist(){                                       //remove by item made into a function
-    int c=item.size();
-    b=3;
-    while(c!=0 && b!=0){
+void checklist(){
+    b = 3; 
+    while(!item.empty() && b != 0){ 
         printChecklist();
-        cin>>b;
-        if(b!=0 && c!=0){
-        item.erase(item.begin() + (b)-1);
+        cout << "Enter index to check off (or 0 to exit): ";
+        cin >> b;
+        if(b > 0 && b <= item.size()){
+            item.erase(item.begin() + (b - 1));
         }
-        else{
-            return;
+        else if (b != 0) {
+            cout << "Invalid index. Please try again." << endl;
+            sleep(1);
         }
     }
+
+    printTable();
 }
 
 void clearlist(){
