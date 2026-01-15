@@ -14,7 +14,7 @@ void header(){                                                                  
     cout<< left << setw(5) << hder[0]
     << setw(80) << hder[1]
     << setw(20) << hder[2]
-    << setw(10) << hder[4]
+    << setw(10) << hder[3]
     << setw(10) << hder[4]
     << endl;
 }

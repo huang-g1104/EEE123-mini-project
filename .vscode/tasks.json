@@ -7,7 +7,12 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "${file}",
+                "main.cpp",
+                "functions.cpp",
+                "io_functions.cpp",
+                "list_array.cpp",
+                "ui.cpp",
+                "ux.cpp",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
