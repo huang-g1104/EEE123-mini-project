@@ -22,15 +22,8 @@ a=10;
 for(;;){
     b=0;
     printTable();
-    for (size_t i = 0; i < schedule.size(); i++) {
-        cout << left << setw(7) << (i + 1)   //Row number (1-based index)
-        << setw(80) << schedule[i][0]       //schedule name
-        << setw(20) << schedule[i][1]       //time added
-        << setw(10) << schedule[i][2]       //quantity
-        << setw(10) << schedule[i][3]       //price
-        << endl;  
-    }                                  //the loop starts here
-    cin>>a;                                           //cue for functions
+    for (size_t i = 0; i < schedule.size(); i++) {                       //the loop starts here
+    cin>>a;                                                              //cue for functions
     if(a==1){
         additem();
         a=10;

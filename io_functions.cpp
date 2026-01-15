@@ -5,7 +5,7 @@
 #include "main.hpp"
 using namespace std;    
 
-void loadfromfile(string filename, vector<vector<string>>& targetVector) {
+void loadfromfile(string filename, vector<vector<string>>& targetVector) {  //generalized load function for both shopping list and schedule
     targetVector.clear(); 
     ifstream input(filename);
     string line;
@@ -27,7 +27,7 @@ void loadfromfile(string filename, vector<vector<string>>& targetVector) {
     input.close();
 }
 
-void savetofile(string filename){
+void savetofile(string filename){                           //save shopping list to external file
     ofstream output;
     output.open(filename);
     for (size_t i = 0; i < item.size(); i++){
@@ -36,7 +36,7 @@ void savetofile(string filename){
     output.close();
 }
 
-void savetoschedule(string filename) {
+void savetoschedule(string filename) {                        //save schedule list to external file
     ofstream output(filename);
     // Use schedule.size(), not item.size()
     for (size_t i = 0; i < schedule.size(); i++) {

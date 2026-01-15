@@ -166,7 +166,6 @@ void checkforschedule() {                     //check for scheduled items whose 
     strftime(buffer, sizeof(buffer), "%Y-%m-%d", local_time);    
     string current_date = buffer;
     for (int i = schedule.size() - 1; i >= 0; i--) {                //iterate backwards to safely remove items
-
         if (schedule[i][1] > current_date) { 
             item.push_back(schedule[i]);                //add scheduled item to shopping list
             schedule.erase(schedule.begin() + i);       //remove item from schedule list
@@ -177,8 +176,8 @@ void checkforschedule() {                     //check for scheduled items whose 
     }
 }
 
-void scheduleitem(){
-    vector<string> waiter(4);
+void scheduleitem(){                                    //similar to additem function but adds to schedule vector instead
+    vector<string> waiter(4);                           //items scheduled will be added to shopping list via iteration in checkforschedule function 
     string name;
     char schedule_date[11];
     printScheduleitem();
