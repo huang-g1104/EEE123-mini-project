@@ -2,8 +2,7 @@
 #include <fstream>
 #include <vector>
 #include <sstream>
-#include "list_array.hpp"
-#include "io_functions.hpp"
+#include "main.hpp"
 using namespace std;    
 
 

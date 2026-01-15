@@ -4,23 +4,23 @@
 #include <sstream>
 #include <chrono>
 #include <vector>
-#include "functions.hpp"
-#include "list_array.hpp"
-#include "ui.hpp"
+#include "main.hpp"
+
 using namespace std;
 
-int refnumber, b, quantity; 
+long long quantity;
+int refnumber, b;
 string tempquan;
-double price;
+long double price=0;
 
 void additem(){
-
     vector<string> waiter(4);
-    string name="";
+    string name;
 
     printAdditem();
     cout << "Enter the name of the item:"<<"\n";
     cin>>name>>price>>quantity;
+
     waiter[0]=name;
     
     auto now = chrono::system_clock::now();
@@ -33,15 +33,14 @@ void additem(){
     
     string quantitystr=to_string(quantity);
     waiter[2]=quantitystr;
-
     price=price*quantity;
     ostringstream out;
     out<<fixed<<setprecision(2)<<price;
     string total_price=out.str();
     waiter[3]=total_price;
     quantity=0;
+    price=0;
     item.push_back(waiter);
-    
     printTable();
 }
 
@@ -93,6 +92,37 @@ void checklist(){
         }
         else{
             break;
+        }
+    }
+}
+
+void clearlist(){
+    printClearlist();
+    cout<< "Are you sure you want to CLEAR the shopping list?"<<"\n";
+    cout<< "Enter 5 to proceed"<<"\n";
+    b=4;
+    while(b!=0){
+        cin>>b;
+        if(b==5){
+            printClearlist();
+            cout<<"Clearing the shopping list."<<"\n";
+            sleep(1.5);
+            printClearlist();
+            cout<<"Clearing the shopping list.."<<"\n";
+            sleep(1.5);
+            printClearlist();
+            cout<<"Clearing the shopping list..."<<"\n";
+            sleep(1.5);
+            printClearlist();
+            item.clear();
+            printTable();
+            break;
+        }
+        else if(b==0){
+            break;
+        }
+        else{
+            cout<<"Please enter a valid input"<<"\n";
         }
     }
 }
