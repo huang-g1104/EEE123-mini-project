@@ -94,11 +94,20 @@ void removeitem(){
         cout<<"--Remove by quantity--"<<"\n";
         cout<<"Enter the quantity of the item to be removed: "; 
         cin>>quantity;
+        string tempprice=item[refnumber-1][3];
+        double perprice= atoi(tempprice.c_str());
         tempquan=item[refnumber-1][2];                     //store original quantity in temp variable
-        quantity=atoi(tempquan.c_str())-quantity;          //calculate new quantity after removal
+        quantity=atoi(tempquan.c_str())-quantity; 
+        price=perprice/atoi(tempquan.c_str()); //get price per unit       //calculate new quantity after removal
         string quantitystr=to_string(quantity);
         if(quantity>0){
-            item[refnumber-1][2]= quantitystr;              //update quantity if still greater than 0
+            item[refnumber-1][2]= quantitystr;
+            //get price per unit
+            price=price*quantity;             //calculate total price of the item
+            ostringstream out;
+            out<<fixed<<setprecision(2)<<price;
+            string total_price=out.str();
+            item[refnumber-1][3]=total_price;              //update quantity if still greater than 0
         }
         else{
             item.erase(item.begin() + (refnumber-1));       //remove entire item if quantity is 0 or less
