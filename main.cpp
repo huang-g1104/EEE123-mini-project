@@ -1,3 +1,5 @@
+//Purpose: Main program file for shopping list management application
+
 #include <iostream>
 #include <fstream>
 #include <ctime>

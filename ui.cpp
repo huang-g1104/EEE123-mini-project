@@ -1,3 +1,5 @@
+//Purpose: All user interface display functions for shopping list management
+
 #include<iostream>
 #include<cmath>
 #include<iomanip>

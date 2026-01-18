@@ -1,3 +1,5 @@
+//Purpose: All input/output functions for shopping list and schedule management
+
 #include <iostream>
 #include <fstream>
 #include <vector>

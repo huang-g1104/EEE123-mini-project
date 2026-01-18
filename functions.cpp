@@ -1,3 +1,5 @@
+//Programmer: Huang Qi He
+//purpose: All main functions for shopping list management
 #include <iostream>
 #include <iomanip>
 #include <string>

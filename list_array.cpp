@@ -1,3 +1,5 @@
+//Purpose: Functions for calculating total price of shopping list  
+
 #include <vector>
 #include <string>
 #include "main.hpp"

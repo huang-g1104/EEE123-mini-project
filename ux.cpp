@@ -1,3 +1,5 @@
+//Purpose: All user experience display functions for shopping list management
+
 #include <iostream>
 #include <thread>
 #include <chrono>
